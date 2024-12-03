@@ -1,0 +1,15 @@
+<h2>Employee Dashboard</h2>
+<div class="employee-page">
+  <!-- <h3>Welcome, {{ currentEmployee?.name || 'Guest' }}</h3> -->
+
+  <h3>Add a Review</h3>
+  <form (submit)="addReview()">
+    <label for="employee">Employee Name:</label><br />
+    <input type="text" id="employee" [(ngModel)]="reviewData.employeeName" name="employeeName" required />
+    <br />
+    <label for="review">Review:</label><br />
+    <textarea id="review" [(ngModel)]="reviewData.review" name="review" required></textarea>
+    <br />
+    <button type="submit">Submit</button>
+  </form>
+</div>

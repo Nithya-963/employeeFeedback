@@ -1,0 +1,21 @@
+<h2>Admin Dashboard</h2>
+<div class="admin-page">
+  <h3>Add or Edit Employee</h3>
+  <form (ngSubmit)="addOrUpdateEmployee()">
+    <label for="name">Name:</label><br />
+    <input type="text" id="name" [(ngModel)]="newEmployee.employeeName" name="name" required /><br />
+    <label for="review">Feedback:</label><br />
+    <textarea id="review" [(ngModel)]="newEmployee.review" name="review" required ></textarea><br /><br />
+    <button type="submit">{{ isEditMode ? 'Update' : 'Add' }}</button>
+  </form>
+
+  <h3>Employees</h3>
+  <ul>
+    <li *ngFor="let employee of employees">
+      <p>Name: {{ employee.employeeName }}</p>
+      <p>Feedback: {{ employee.review }}</p>
+      <button (click)="editEmployee(employee)">Edit</button>
+      <button (click)="deleteEmployee(employee._id)">Delete</button>
+    </li>
+  </ul>
+</div>
